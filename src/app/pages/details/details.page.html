@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      Task´s detail
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title>Task´s detail</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div>
+    <ion-list lines="full">
+        <ion-item>
+          <ion-input required type="text" placeholder="Enter task" [(ngModel)]="task.name">
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input required type="number" placeholder="Enter priority" [(ngModel)]="task.priority">
+          </ion-input>
+        </ion-item>
+    </ion-list>
+    
+    <ion-button expand="full" (click)="saveTask()">Save</ion-button>
+
+    <ion-fab slot="fixed" vertical="bottom" horizontal="end" color="danger">
+      <ion-fab-button color="danger" routerLink="/" routerDirrection="forward" (click)="onRemove()">
+        <ion-icon name="trash"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
+</ion-content>
